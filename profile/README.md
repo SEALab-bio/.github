@@ -5,14 +5,14 @@
 
   图片一律用 raw.githubusercontent.com 绝对地址：
   组织主页的 base URL 是 /SEALab-bio，相对路径 assets/xxx.webp 会 404。
-  视觉素材自托管于 assets/（WebP 合计约 441KB），不依赖 capsule-render 等境外 CDN。
+  视觉构成：首尾 capsule-render 波浪动画（轻量 SVG，带 SEA Lab 字样）+
+  assets/ 下自托管 WebP 素材（hero / mascot，合计约 441KB）。
+  capsule-render / typing-svg / shields.io 均为境外 CDN，国内偶有加载慢，
+  但首尾波浪是整套视觉的骨架，保留。
 ============================================================ -->
 
-<!-- 🌊 Hero 横幅：深海星图（自托管 WebP，替代原 capsule-render 波浪头图） -->
-<p align="center">
-  <img src="https://raw.githubusercontent.com/SEALab-bio/.github/main/assets/hero.webp"
-       alt="SEA Lab — charting the deep sea of biology" width="100%" />
-</p>
+<!-- 🌊 顶部波浪头图（深海渐变 + 淡入动画） -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D3B66,50:14607F,100:19B3A6&height=200&section=header&text=SEA%20Lab&fontSize=72&fontColor=e6f7ff&animation=fadeIn&desc=Smart%20Exploration%20Anywhere&descSize=20&descAlignY=68&descColor=a8dadc" width="100%"/>
 
 <div align="center">
 
@@ -42,6 +42,12 @@
 > *Welcome aboard.* 🤿
 
 ---
+
+<!-- 🌊 深海星图横幅：衔接 The Name 的航海意象（自托管 WebP） -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SEALab-bio/.github/main/assets/hero.webp"
+       alt="SEA Lab — charting the deep sea of biology" width="100%" />
+</p>
 
 ## 🔬 Research
 
@@ -83,3 +89,6 @@ We welcome students and collaborators interested in **computational biology, agi
   <img src="https://raw.githubusercontent.com/SEALab-bio/.github/main/assets/mascot.webp"
        alt="SEA Lab — a seal pup glowing in the deep" width="100%" />
 </p>
+
+<!-- 🌊 底部波浪 -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:19B3A6,50:14607F,100:0D3B66&height=120&section=footer" width="100%"/>
