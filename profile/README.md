@@ -1,18 +1,22 @@
 <!-- ============================================================
   SEALab-bio · GitHub Organization Profile README
-  本文件位于 org 的 `.github` 公开仓库根目录，GitHub 会自动渲染为组织主页。
-  注意：真实 org 名是 SEALab-bio（SEALab 已被他人占用），所有外链务必带 -bio 后缀。
-  Logo 做好后放 assets/logo.png（本仓库根目录）即可自动显示。
-  依赖的外链服务（capsule-render / typing-svg / shields.io）全部免费。
+  渲染位置：https://github.com/SEALab-bio 的 Overview 标签
+  本文件必须位于 profile/README.md —— 根目录 README.md 不会显示在组织主页。
+
+  图片一律用 raw.githubusercontent.com 绝对地址：
+  组织主页的 base URL 是 /SEALab-bio，相对路径 assets/xxx.webp 会 404。
+  视觉素材自托管于 assets/（WebP 合计约 441KB），不依赖 capsule-render 等境外 CDN。
 ============================================================ -->
 
-<!-- 🌊 顶部动态波浪头图（深海渐变 + 淡入动画） -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D3B66,50:14607F,100:19B3A6&height=200&section=header&text=SEA%20Lab&fontSize=72&fontColor=e6f7ff&animation=fadeIn&desc=Smart%20Exploration%20Anywhere&descSize=20&descAlignY=68&descColor=a8dadc" width="100%"/>
+<!-- 🌊 Hero 横幅：深海星图（自托管 WebP，替代原 capsule-render 波浪头图） -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SEALab-bio/.github/main/assets/hero.webp"
+       alt="SEA Lab — charting the deep sea of biology" width="100%" />
+</p>
 
 <div align="center">
 
-<!-- 🦭 Logo 占位：把 logo 放到 assets/logo.png 后取消下行注释 -->
-<!-- <img src="assets/logo.png" width="160" alt="SEALab"/> -->
+<!-- 🦭 Logo 不在此处重复：它已是组织头像，组织页顶部会自动显示 -->
 
 <!-- ⌨️ 打字机动态标语 -->
 <a href="#-research">
@@ -74,5 +78,8 @@ We welcome students and collaborators interested in **computational biology, agi
   <img src="https://raw.githubusercontent.com/SEALab-bio/.github/output/github-snake.svg" alt="snake" width="100%"/>
 </picture>
 
-<!-- 🌊 底部波浪 -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:19B3A6,50:14607F,100:0D3B66&height=120&section=footer" width="100%"/>
+<!-- 🦭 收尾暖场：深海发光海豹幼崽（柔和低对比，作情绪收束） -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SEALab-bio/.github/main/assets/mascot.webp"
+       alt="SEA Lab — a seal pup glowing in the deep" width="100%" />
+</p>
