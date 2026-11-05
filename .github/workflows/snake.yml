@@ -1,0 +1,45 @@
+# SEALab-bio · GitHub 贡献贪吃蛇动画
+# 位置：本文件必须位于仓库的 .github/workflows/ 目录下（GitHub 只认这个路径）
+#
+# ⚠️ 为何这里填个人账号而不是 org：
+#   snk 内部走 GitHub GraphQL 的 user(login:) 查询，该方法只解析个人账号。
+#   传 org 名会直接报错：
+#     Action failed with "Could not resolve to a User with the login of 'SEALab-bio'."
+#   （已验证：organization(login:) 能解析，user(login:) 返回 null）
+#   所以 github_user_name 必须是个人账号。
+#
+# 权限：job 级已声明 contents: write，足以把 SVG 推到 output 分支；
+#   若 org 策略强制 GITHUB_TOKEN 只读，需在仓库 Settings → Actions → General
+#   → Workflow permissions 改为 "Read and write permissions"
+# 展示：README 中 <picture> 段引用 output 分支的 SVG
+
+name: Generate Snake
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # 每天 UTC 0 点跑一次
+  workflow_dispatch:       # 支持手动触发
+  push:
+    branches: [main]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate snake SVG
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: hhx465453939    # ← 必须是个人账号，snk 不支持 org（见文件头）
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
+
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
